@@ -34,6 +34,7 @@ public static class SaveLoad
             CurrentSave.PlayerName = "";
             CurrentSave.DemonName = "";
             CurrentSave.progress = 0;
+            CurrentSave.ClearedAchivements = new List<SavedAchivements>();
         }
     }
 }

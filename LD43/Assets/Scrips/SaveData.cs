@@ -8,6 +8,6 @@ public class SaveData {
     public string PlayerName;
     public string DemonName;
     public int progress;
-    public List<Achivement> ClearedAchivements;
+    public List<SavedAchivements> ClearedAchivements;
 
 }

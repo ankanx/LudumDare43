@@ -7,7 +7,12 @@ public class SaveHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         SaveLoad.Load();
-        Debug.Log("Debug : \n " + "Player Name: " + SaveLoad.CurrentSave.PlayerName + "\n Demon Name: " + SaveLoad.CurrentSave.DemonName + " \n Progress: " + SaveLoad.CurrentSave.progress + "\n ");
+        string debugstring = "Debug : \n " + "Player Name: " + SaveLoad.CurrentSave.PlayerName + "\n Demon Name: " + SaveLoad.CurrentSave.DemonName + " \n Progress: " + SaveLoad.CurrentSave.progress + "\n "; 
+        foreach(SavedAchivements ach in SaveLoad.CurrentSave.ClearedAchivements)
+        {
+            debugstring += "\n " + ach.Name;
+        }
+        Debug.Log(debugstring);
 	}
 	
 	// Update is called once per frame
