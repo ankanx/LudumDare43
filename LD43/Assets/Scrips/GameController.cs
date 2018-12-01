@@ -89,7 +89,7 @@ public class GameController : MonoBehaviour {
         GameObject NewEvent = (GameObject)Instantiate(EventList[Random.Range(0, EventList.Count - 1)]);
         NewEvent.name = NewEvent.GetComponent<Event>().Name + Playthrough.Count ;
         NewEvent.transform.SetParent(EventSpawn.transform,false);
-        NewEvent.GetComponent<Event>().SetDemon(Demon);
+        NewEvent.GetComponent<Event>().SetDemon(Demon, Playthrough.Count);
         CurrentEvent = NewEvent;
         Playthrough.Add(NewEvent);
     }

@@ -9,10 +9,11 @@ public class Event : MonoBehaviour {
     public string DemonName;
     public Demon.Trait DemonMainTrait;
     public Demon.Trait DemonSecondTrait;
-    public GameObject Demon;
+    public GameObject DemonNameText;
+    public TextMeshProUGUI CurrentEventNumber;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -21,12 +22,13 @@ public class Event : MonoBehaviour {
 		
 	}
 
-    public void SetDemon(Demon demon)
+    public void SetDemon(Demon demon, int currentEventNumber)
     {
-        Demon.GetComponent<TextMeshProUGUI>().text = demon.Name1;
+        DemonNameText.GetComponent<TextMeshProUGUI>().text = demon.Name1;
         DemonName = demon.Name1;
         DemonMainTrait = demon.MainTrait1;
         DemonSecondTrait = demon.SecondTrait1;
+        CurrentEventNumber.text = "Choise Number: " + currentEventNumber;
     }
 
    
