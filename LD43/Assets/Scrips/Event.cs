@@ -12,9 +12,12 @@ public class Event : MonoBehaviour {
     public Demon.Trait DemonSecondTrait;
     public GameObject DemonNameText;
     public TextMeshProUGUI CurrentEventNumber;
+    public GameObject Trait1;
+    public GameObject Trait2;
 
     public GameObject FirstChoise;
     public GameObject SecondChoise;
+
 
     bool StartedFire = false;
 
@@ -33,7 +36,6 @@ public class Event : MonoBehaviour {
             SecondChoise.GetComponent<Button>().interactable = false;
             SecondChoise.GetComponent<Animator>().SetBool("Active", false);
             GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Play();
-            Debug.Log("sds1");
             Debug.Log(SecondChoise.GetComponent<Button>().interactable);
             StartedFire = true;
         }
@@ -42,7 +44,6 @@ public class Event : MonoBehaviour {
             FirstChoise.GetComponent<Button>().interactable = false;
             FirstChoise.GetComponent<Animator>().SetBool("Active", false);
             GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Play();
-            Debug.Log("sds2");
             Debug.Log(FirstChoise.GetComponent<Button>().interactable);
             StartedFire = true;
         }
@@ -56,6 +57,59 @@ public class Event : MonoBehaviour {
         DemonMainTrait = demon.MainTrait1;
         DemonSecondTrait = demon.SecondTrait1;
         CurrentEventNumber.text = "Choise Number: " + currentEventNumber;
+        switch (demon.MainTrait1)
+        {
+            case Demon.Trait.Envy:
+                Trait1.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/envy");
+                break;
+            case Demon.Trait.Gluttony:
+                Trait1.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/gluttony");
+                break;
+            case Demon.Trait.Greed:
+                Trait1.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/greed");
+                break;
+            case Demon.Trait.Lust:
+                Trait1.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/lust");
+                break;
+            case Demon.Trait.Pride:
+                Trait1.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/pride");
+                break;
+            case Demon.Trait.Sloth:
+                Trait1.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/sloth");
+                break;
+            case Demon.Trait.Wrath:
+                Trait1.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/wrath");
+                break;
+
+        }
+
+        switch (demon.SecondTrait1)
+        {
+            case Demon.Trait.Envy:
+                Trait2.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/envy");
+                break;
+            case Demon.Trait.Gluttony:
+                Trait2.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/gluttony");
+                break;
+            case Demon.Trait.Greed:
+                Trait2.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/greed");
+                break;
+            case Demon.Trait.Lust:
+                Trait2.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/lust");
+                break;
+            case Demon.Trait.Pride:
+                Trait2.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/pride");
+                break;
+            case Demon.Trait.Sloth:
+                Trait2.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/sloth");
+                break;
+            case Demon.Trait.Wrath:
+                Trait2.GetComponent<Image>().sprite = Resources.Load<Sprite>("SevenSins/wrath");
+                break;
+        }
+
+
+
     }
 
    
