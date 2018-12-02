@@ -28,9 +28,11 @@ public class Event : MonoBehaviour {
         if (FirstChoise.GetComponent<Button>().interactable == false)
         {
             SecondChoise.GetComponent<Button>().interactable = false;
+            GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Play();
         }else if(SecondChoise.GetComponent<Button>().interactable == false)
         {
             FirstChoise.GetComponent<Button>().interactable = false;
+            GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Play();
         }
     }
 
