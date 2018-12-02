@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Event : MonoBehaviour {
 
@@ -12,15 +13,26 @@ public class Event : MonoBehaviour {
     public GameObject DemonNameText;
     public TextMeshProUGUI CurrentEventNumber;
 
+    public GameObject FirstChoise;
+    public GameObject SecondChoise;
+
     // Use this for initialization
     void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        // Had to do this
+        if (FirstChoise.GetComponent<Button>().interactable == false)
+        {
+            SecondChoise.GetComponent<Button>().interactable = false;
+        }else if(SecondChoise.GetComponent<Button>().interactable == false)
+        {
+            FirstChoise.GetComponent<Button>().interactable = false;
+        }
+    }
 
     public void SetDemon(Demon demon, int currentEventNumber)
     {
