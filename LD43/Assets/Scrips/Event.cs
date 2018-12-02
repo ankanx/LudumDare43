@@ -16,6 +16,8 @@ public class Event : MonoBehaviour {
     public GameObject FirstChoise;
     public GameObject SecondChoise;
 
+    bool StartedFire = false;
+
     // Use this for initialization
     void Start () {
 
@@ -25,15 +27,26 @@ public class Event : MonoBehaviour {
 	void Update () {
 
         // Had to do this
-        if (FirstChoise.GetComponent<Button>().interactable == false)
+
+        if (FirstChoise.GetComponent<Button>().interactable == false && !StartedFire)
         {
             SecondChoise.GetComponent<Button>().interactable = false;
+            SecondChoise.GetComponent<Animator>().SetBool("Active", false);
             GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Play();
-        }else if(SecondChoise.GetComponent<Button>().interactable == false)
+            Debug.Log("sds1");
+            Debug.Log(SecondChoise.GetComponent<Button>().interactable);
+            StartedFire = true;
+        }
+        else if (SecondChoise.GetComponent<Button>().interactable == false && !StartedFire)
         {
             FirstChoise.GetComponent<Button>().interactable = false;
+            FirstChoise.GetComponent<Animator>().SetBool("Active", false);
             GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Play();
+            Debug.Log("sds2");
+            Debug.Log(FirstChoise.GetComponent<Button>().interactable);
+            StartedFire = true;
         }
+
     }
 
     public void SetDemon(Demon demon, int currentEventNumber)

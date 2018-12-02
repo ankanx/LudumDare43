@@ -11,6 +11,11 @@ public class MoveToNextEvent : MonoBehaviour {
         handler = GameObject.FindGameObjectWithTag("GameController");
     }
 
+    public void KillFire()
+    {
+        GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Stop();
+    }
+
     public void MoveToNextEventTrigger()
     {
         handler.GetComponent<GameController>().GenerateEvent();
