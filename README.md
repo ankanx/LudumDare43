@@ -1,2 +1,2 @@
-# LudumDare43
-A game made for the Ludum Dare 43 by Andreas and Sebastian
+# LudumDare43 - Dyrkan <img src="https://github.com/ankanx/LudumDare43/blob/master/LD43/Assets/Resources/SevenSins/lust.png" width="50" height="50">
+A game made for the Ludum Dare 43 by Sebastian <img src="https://github.com/ankanx/LudumDare43/blob/master/LD43/Assets/Resources/SevenSins/Pride.png" width="25" height="25">, Saranya <img src="https://github.com/ankanx/LudumDare43/blob/master/LD43/Assets/Resources/SevenSins/wrath.png" width="25" height="25"> and Andreas <img src="https://github.com/ankanx/LudumDare43/blob/master/LD43/Assets/Resources/SevenSins/sloth.png" width="25" height="25">
