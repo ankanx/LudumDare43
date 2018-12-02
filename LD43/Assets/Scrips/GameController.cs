@@ -79,7 +79,8 @@ public class GameController : MonoBehaviour {
 
     public void GenerateEvent()
     {
-        if(Playthrough.Count > SaveLoad.CurrentSave.progress)
+        GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Stop();
+        if (Playthrough.Count > SaveLoad.CurrentSave.progress)
         {
             SaveLoad.CurrentSave.DemonName = Demon.Name1;
             SaveLoad.CurrentSave.progress = Playthrough.Count;
