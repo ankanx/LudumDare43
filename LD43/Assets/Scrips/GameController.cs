@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour {
 
     public int Life = 1;
     public int Numofgames = 0;
-    // Use this for initialization
+    public int lasteventid = -1;
 
     public enum Choise
     {
@@ -73,6 +73,7 @@ public class GameController : MonoBehaviour {
 
     public void GenerateNewGame()
     {
+        lasteventid = -1;
         Numofgames++;
         Life = 1;
         Playthrough = new List<GameObject>();
@@ -137,8 +138,15 @@ public class GameController : MonoBehaviour {
             SaveLoad.CurrentSave.progress = Playthrough.Count;
         }
 
+
+
         Destroy(CurrentEvent);
-        GameObject NewEvent = (GameObject)Instantiate(EventList[Random.Range(0, EventList.Count - 1)]);
+        int newEventId = Random.Range(0, EventList.Count - 1);
+        while(newEventId == lasteventid)
+        {
+            newEventId = Random.Range(0, EventList.Count - 1);
+        }
+        GameObject NewEvent = (GameObject)Instantiate(EventList[newEventId]);
         NewEvent.name = NewEvent.GetComponent<Event>().Name + Playthrough.Count ;
         NewEvent.transform.SetParent(EventSpawn.transform,false);
         NewEvent.GetComponent<Event>().SetDemon(Demon, Playthrough.Count);

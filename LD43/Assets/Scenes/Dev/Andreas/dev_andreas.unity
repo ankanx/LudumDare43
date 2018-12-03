@@ -844,6 +844,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventList:
   - {fileID: 1355981873464822, guid: 7523eeb9f99858d41b762f6e99b62c60, type: 2}
+  - {fileID: 1117473543254348, guid: bf1ac9e0ee089a44ebea993f2947fce4, type: 2}
+  - {fileID: 1256463024696752, guid: 8adcffd577425f941909f2ee09ca4312, type: 2}
+  - {fileID: 1962967825382042, guid: 2f35417dab1b2ad4aa223db6c18646a8, type: 2}
+  - {fileID: 1184677221430968, guid: 5c1f632a34fcc614da98482019e4b01e, type: 2}
+  - {fileID: 1211073521117248, guid: 6a0b46369bb131a49b3eebf1172913fd, type: 2}
+  - {fileID: 1342006849268266, guid: 1585c7bdc480ced498618adabf183199, type: 2}
+  - {fileID: 1865928588771648, guid: fcfa8fc6a3fdf93429bf3e9ee10a5186, type: 2}
   CurrenPlaythruEventList: []
   Playthrough: []
   CurrentEvent: {fileID: 0}
@@ -855,6 +862,7 @@ MonoBehaviour:
     type: 2}
   DialogMan: {fileID: 0}
   Life: 1
+  Numofgames: 0
 --- !u!4 &850819820
 Transform:
   m_ObjectHideFlags: 0
