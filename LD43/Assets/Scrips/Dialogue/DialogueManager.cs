@@ -6,8 +6,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour {
 
-    public TextMeshPro nameText;
-    public TextMeshPro dialogueText;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
 
     public Animator animator;
 
@@ -21,9 +21,12 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue(List<List<string>> listOfDialogue)
     {
+        sentences = new Queue<string>();
         animator.SetTrigger("FadeIn");
         nameText.text = gameObject.name;
-        int index = Random.Range(0, listOfDialogue.Count);
+        int index = Random.Range(0, listOfDialogue.Count-1);
+        Debug.Log(listOfDialogue.Count);
+        Debug.Log(index);
         List<string> dialogue = listOfDialogue[index];
 
         sentences.Clear();
@@ -72,37 +75,13 @@ public class DialogueManager : MonoBehaviour {
         animator.SetTrigger("FadeOut");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    public void Trigger()
     {
-
-
-        Debug.Log("objet: " + gameObject.tag + " collision with: " + collision.gameObject);
-
-        if ((collision.gameObject.tag == "Goblin") && (gameObject.tag == "Player"))
-        {
-            List<List<string>> listOfPlayerToGoblin = FindObjectOfType<DialogueList>().listOfPlayerToGoblin;
-            StartDialogue(listOfPlayerToGoblin);
-        }
-        else if ((collision.gameObject.tag == "Player") && (gameObject.tag == "Goblin"))
-        {
-            List<List<string>> listOfGoblinToPlayer = FindObjectOfType<DialogueList>().listOfGoblinToPlayer;
-            StartDialogue(listOfGoblinToPlayer);
-        }
-        else if ((collision.gameObject.tag == "Goblin") && (gameObject.tag == "Goblin"))
-        {
-            List<List<string>> listOfGoblinToGoblin = FindObjectOfType<DialogueList>().listOfGoblinToGoblin;
-            StartDialogue(listOfGoblinToGoblin);
-        }
-        else if ((collision.gameObject.tag == "Player") && (gameObject.tag == "Checkpoint"))
-        {
-            List<List<string>> listOfCheckpoint = FindObjectOfType<DialogueList>().listOfCheckpoint;
-            StartDialogue(listOfCheckpoint);
-        }
-        else if ((collision.gameObject.tag == "Player") && (gameObject.tag == "BigGoblin"))
-        {
-            List<List<string>> listOfBigGoblinToPlayer = FindObjectOfType<DialogueList>().listOfBigGoblinToPlayer;
-            StartDialogue(listOfBigGoblinToPlayer);
-        }
+        StartDialogue(GetComponent<DialogueList>().PlayerSpeach);
     }
+
+
 
 }

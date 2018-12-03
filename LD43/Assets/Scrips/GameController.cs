@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour {
     public List<Achivement> AvailebleAchivements;
     public GameObject AchivementPrefab;
 
+    public DialogueManager DialogMan;
+
 	// Use this for initialization
 	void Start () {
 
@@ -93,6 +95,9 @@ public class GameController : MonoBehaviour {
         NewEvent.GetComponent<Event>().SetDemon(Demon, Playthrough.Count);
         CurrentEvent = NewEvent;
         Playthrough.Add(NewEvent);
+        DialogMan = GameObject.FindGameObjectWithTag("Dialog").GetComponent<DialogueManager>();
+        DialogMan.Trigger();
+        
     }
 
     public void UnlockAchivement(Achivement achivement)
