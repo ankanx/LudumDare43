@@ -8,7 +8,7 @@ public class BackToMainMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") || Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene(1);
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -147,6 +148,9 @@ public class GameController : MonoBehaviour {
         else if (Playthrough.Count == 9)
         {
             Player.GetComponent<SpriteRenderer>().sprite = step4;
+        }else if(Playthrough.Count == 10)
+        {
+            SceneManager.LoadScene(4);
         }
 
 
@@ -455,17 +459,9 @@ public class GameController : MonoBehaviour {
                 break;
         }
 
+        Debug.Log(Life);
 
-
-
-
-        if((choise == Choise.SacrificeHuman && Demon.SecondTrait1 == Demon.Trait.Lust) || (choise == Choise.SacrificeHuman && Demon.MainTrait1 == Demon.Trait.Lust))
-        {
-            Life -= 1;
-        }
-
-
-        if(Life <= 0)
+        if (Life <= 0)
         {
             Die();
         }

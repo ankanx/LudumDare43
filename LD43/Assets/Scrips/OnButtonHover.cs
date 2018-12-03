@@ -15,6 +15,6 @@ public class OnButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void OnPointerExit(PointerEventData eventData)
     {
         GetComponentInChildren<TextMeshProUGUI>().text = "Exit";
-        GetComponentInChildren<TextMeshProUGUI>().color = Color.black;
+        GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
     }
 }

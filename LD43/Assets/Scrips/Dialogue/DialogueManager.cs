@@ -27,8 +27,6 @@ public class DialogueManager : MonoBehaviour {
             nameText.text = "Player";
         }
         int index = Random.Range(0, listOfDialogue.Count);
-        Debug.Log(listOfDialogue.Count);
-        Debug.Log(index);
         List<string> dialogue = listOfDialogue[index];
 
         sentences.Clear();
@@ -96,16 +94,19 @@ public class DialogueManager : MonoBehaviour {
                 StartDialogue(GetComponent<DialogueList>().GiraffeChoise, "Player");
                 break;
             case GameController.Choise.Sacrificeababy:
-                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                StartDialogue(GetComponent<DialogueList>().BabyChoise, "Player");
                 break;
             case GameController.Choise.Sacrificeahand:
-                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                StartDialogue(GetComponent<DialogueList>().HandChoise, "Player");
                 break;
             case GameController.Choise.Sacrificeaneye:
-                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                StartDialogue(GetComponent<DialogueList>().EyeChoise, "Player");
                 break;
             case GameController.Choise.SacrificeHuman:
                 StartDialogue(GetComponent<DialogueList>().HumanChoise, "Player");
+                break;
+            case GameController.Choise.Flipatable:
+                StartDialogue(GetComponent<DialogueList>().FlipChoise, "Player");
                 break;
         }
     }

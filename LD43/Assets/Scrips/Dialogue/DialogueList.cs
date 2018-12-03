@@ -119,7 +119,16 @@ public class DialogueList : MonoBehaviour {
             "A snack for the master."
         },
         new List<string>{
-            "Kick the baby."
+            "Bye Bye baby."
+        }
+    };
+
+    public List<List<string>> FlipChoise = new List<List<string>>{
+        new List<string>{
+            "One Flip To Rage at them all."
+        },
+        new List<string>{
+            "May every spliter turn to tinder."
         }
     };
 
