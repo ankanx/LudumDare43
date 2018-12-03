@@ -18,11 +18,14 @@ public class DialogueManager : MonoBehaviour {
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(List<List<string>> listOfDialogue)
+    public void StartDialogue(List<List<string>> listOfDialogue, string who)
     {
 
         animator.SetTrigger("FadeIn");
-        nameText.text = gameObject.name;
+        if (who == "Player")
+        {
+            nameText.text = "Player";
+        }
         int index = Random.Range(0, listOfDialogue.Count);
         Debug.Log(listOfDialogue.Count);
         Debug.Log(index);
@@ -76,11 +79,17 @@ public class DialogueManager : MonoBehaviour {
 
 
 
-    public void Trigger()
+    public void Trigger(string who)
     {
-        StartDialogue(GetComponent<DialogueList>().PlayerSpeach);
+        Debug.Log("Random Dialog");
+        StartDialogue(GetComponent<DialogueList>().PlayerSpeach,who);
     }
 
+    public void TriggerStartSpeach(string who)
+    {
+        Debug.Log("Starter Dialog");
+        StartDialogue(GetComponent<DialogueList>().StarterSpeach,who);
+    }
 
 
 }

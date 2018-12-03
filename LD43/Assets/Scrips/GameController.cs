@@ -95,8 +95,14 @@ public class GameController : MonoBehaviour {
         NewEvent.GetComponent<Event>().SetDemon(Demon, Playthrough.Count);
         CurrentEvent = NewEvent;
         Playthrough.Add(NewEvent);
-        DialogMan = GameObject.FindGameObjectWithTag("Dialog").GetComponent<DialogueManager>();
-        DialogMan.Trigger();
+        DialogMan = NewEvent.GetComponentInChildren<DialogueManager>();
+        if (Playthrough.Count == 1)
+        {
+            DialogMan.TriggerStartSpeach("Player");
+        }else
+        {
+            DialogMan.Trigger("Player");
+        }
         
     }
 
