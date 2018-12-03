@@ -22,6 +22,15 @@ public class DialogueList : MonoBehaviour {
     new List<string> {
         "A sheep should suffice...",
         "I hope."
+    },
+    new List<string>{
+        "Well isn't this a SHEEP sarcrifice..",
+        "get it?",
+        "SHEEP!",
+        "ha..ha.."
+    },
+    new List<string>{
+        "Slay the sheep!"
     }
     };
 
@@ -35,12 +44,24 @@ public class DialogueList : MonoBehaviour {
     new List<string> {
         "The giraffe was unexpectedly soft..",
         "ahem I mean the giraffe hs suffered my hug and so be appeased!"
+    },
+    new List<string>{
+        "A devilish hug!"
+    },
+    new List<string>{
+        "I don't like the look that giraff is giving me.."
     }
     };
 
-    public List<List<string>> BloodChoise = new List<List<string>>{
+    public List<List<string>> HandChoise = new List<List<string>>{
     new List<string> {
         "A drop of blood to calm the nerves."
+    },
+    new List<string>{
+        "Well isn't this handy."
+    },
+    new List<string>{
+        "Let me give you a hand."
     }
     };
 
@@ -49,12 +70,24 @@ public class DialogueList : MonoBehaviour {
         "Let us consult the texts..",
         "'palmis caedebat a draconis'..",
         "ok then"
+    },
+    new List<string>{
+        "I slappeth the dragon in your name!"
+    },
+    new List<string>{
+        "I don't know about this..."
     }
     };
 
     public List<List<string>> HumanChoise = new List<List<string>>{
     new List<string> {
         "Another to satiate its hunger."
+    },
+    new List<string>{
+        "Oh the humanity!"
+    },
+    new List<string>{
+        "Human is on the menu."
     }
     };
 
@@ -70,6 +103,24 @@ public class DialogueList : MonoBehaviour {
     new List<string> {
         "Interesting.."
     }
+    };
+
+    public List<List<string>> EyeChoise = new List<List<string>>{
+        new List<string>{
+            "A worthy sacrifice."
+        },
+        new List<string>{
+            "Sight is meeningless in comparison."
+        }
+    };
+
+    public List<List<string>> BabyChoise = new List<List<string>>{
+        new List<string>{
+            "A snack for the master."
+        },
+        new List<string>{
+            "Kick the baby."
+        }
     };
 
     // Each comma and " " is a new comment
