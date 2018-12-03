@@ -4,114 +4,134 @@ using UnityEngine;
 
 public class DialogueList : MonoBehaviour {
 
-    public List<List<string>> listOfPlayerToGoblin = new List<List<string>>();
-    public List<List<string>> listOfGoblinToPlayer = new List<List<string>>();
-    public List<List<string>> listOfGoblinToGoblin = new List<List<string>>();
-    public List<List<string>> listOfCheckpoint = new List<List<string>>();
-    public List<List<string>> listOfBigGoblinToPlayer = new List<List<string>>();
-
-    private void Start()
-    {
-
-        List<string> playerToGoblin1 = new List<string> {
-        "¡Hola! ¿Qué tal?" };
-
-        List<string> playerToGoblin2 = new List<string> {
-        "No me descargaré nada de Goblintorrent.com, me lo voy a ganar." };
-
-        List<string> playerToGoblin3 = new List<string> {
-        "¡Fuera, fuera!" };
-
-        List<string> playerToGoblin4 = new List<string> {
-        "¡Oye!Me ha costado mucho conseguir esto, gánatelo y no me lo robes" };
-
-        listOfPlayerToGoblin.Add(playerToGoblin1);
-        listOfPlayerToGoblin.Add(playerToGoblin2);
-        listOfPlayerToGoblin.Add(playerToGoblin3);
-        listOfPlayerToGoblin.Add(playerToGoblin4);
-
-
-        List<string> goblinToPlayer1 = new List<string> {
-        "Uuhhhhh, me gusta tu ropa, donde la conseguiste?"};
-
-        List<string> goblinToPlayer2 = new List<string> {
-        "ega ega ega todo está en mega"};
-
-        List<string> goblinToPlayer3 = new List<string> {
-        "Taringa" };
-
-        List<string> goblinToPlayer4 = new List<string> {
-        "Desactiva el adblock que si no le podemos robar"};
-
-        List<string> goblinToPlayer5 = new List<string> {
-        "Goblindede se ha caído otra vez. ¡Déjame ver lo que llevas!"};
-
-        listOfGoblinToPlayer.Add(goblinToPlayer1);
-        listOfGoblinToPlayer.Add(goblinToPlayer2);
-        listOfGoblinToPlayer.Add(goblinToPlayer3);
-        listOfGoblinToPlayer.Add(goblinToPlayer4);
-        listOfGoblinToPlayer.Add(goblinToPlayer5);
-
-        List<string> goblinToGoblin1 = new List<string> {
-        "Uuhhhhh, me gusta tu ropa, donde la conseguiste?" };
-
-        List<string> goblinToGoblin2 = new List<string> {
-        "¿Has visto al nueva armadura del jugador?"};
-
-        List<string> goblinToGoblin3 = new List<string> {
-        "Me descargué esto en goblintorrent.com"};
-
-        List<string> goblinToGoblin4 = new List<string> {
-        "Desactiva el adblock que si no le podemos robar"};
-
-        List<string> goblinToGoblin5 = new List<string> {
-        "Le descargué a mi madre un bolso de glucci a mi mama."};
-
-
-
-        listOfGoblinToGoblin.Add(goblinToGoblin1);
-        listOfGoblinToGoblin.Add(goblinToGoblin2);
-        listOfGoblinToGoblin.Add(goblinToGoblin3);
-        listOfGoblinToGoblin.Add(goblinToGoblin4);
-        listOfGoblinToGoblin.Add(goblinToGoblin5);
-
-        List<string> checkpointy = new List<string> {
-        "Soy un punto de guardado, si me visitas, te recordaré"};
-
-        listOfCheckpoint.Add(checkpointy);
-
-
-        List<string> boss1 = new List<string> {
-        "Hola, soy el jefe goblintorrent.com",
-        "¿Vienes a destruirme para que que se caiga mi web?",
-        "¡No tienes nada que hacer! JAJAJAJAJAJA",
-        "¿Pero tú quién te has creído que eres, pequeño humano?"};
-
-        List<string> boss2 = new List<string> {
-        "Hola, soy el jefe goblintorrent.com",
-        "¿Vienes a destruirme para que que se caiga mi web?",
-        "¿No serás tú un comepiedras volador? JAJAJAJA que gracioso soy."};
-
-        List<string> boss3 = new List<string> {
-        "Hola, soy el jefe goblintorrent.com",
-        "¿Vienes a destruirme para que que se caiga mi web?",
-        "Dale like para más juegos gratis."};
-
-        List<string> boss4 = new List<string> {
-        "Hola, soy el jefe goblintorrent.com",
-        "¿Vienes a destruirme para que que se caiga mi web?",
-        "Suscríbete a nuestro premium en goblintorrent.com para una descarga más rápida"};
-
-        listOfBigGoblinToPlayer.Add(boss1);
-        listOfBigGoblinToPlayer.Add(boss2);
-        listOfBigGoblinToPlayer.Add(boss3);
-        listOfBigGoblinToPlayer.Add(boss4);
+    public List<List<string>> PlayerSpeach = new List<List<string>>{
+    new List<string> {
+        "A difficult choise..."
+    },
+    new List<string> {
+        "Was this truly the right decision?",
+        "I guess we will just have to wait and see..."
+    },
+    new List<string> {
+        "I feel my power growing.",
+        "My god what is that smell?"
     }
+};
 
-    
+    public List<List<string>> SheepChoise = new List<List<string>>{
+    new List<string> {
+        "A sheep should suffice...",
+        "I hope."
+    },
+    new List<string>{
+        "Well isn't this a SHEEP sarcrifice..",
+        "get it?",
+        "SHEEP!",
+        "ha..ha.."
+    },
+    new List<string>{
+        "Slay the sheep!"
+    }
+    };
 
+    public List<List<string>> GoldChoise = new List<List<string>>{
+    new List<string> {
+        "Why does such a powerful being crave such feeble objects?"
+    }
+    };
 
+    public List<List<string>> GiraffeChoise = new List<List<string>>{
+    new List<string> {
+        "The giraffe was unexpectedly soft..",
+        "ahem I mean the giraffe hs suffered my hug and so be appeased!"
+    },
+    new List<string>{
+        "A devilish hug!"
+    },
+    new List<string>{
+        "I don't like the look that giraff is giving me.."
+    }
+    };
 
+    public List<List<string>> HandChoise = new List<List<string>>{
+    new List<string> {
+        "A drop of blood to calm the nerves."
+    },
+    new List<string>{
+        "Well isn't this handy."
+    },
+    new List<string>{
+        "Let me give you a hand."
+    }
+    };
+
+    public List<List<string>> DragonChoise = new List<List<string>>{
+    new List<string> {
+        "Let us consult the texts..",
+        "'palmis caedebat a draconis'..",
+        "ok then"
+    },
+    new List<string>{
+        "I slappeth the dragon in your name!"
+    },
+    new List<string>{
+        "I don't know about this..."
+    }
+    };
+
+    public List<List<string>> HumanChoise = new List<List<string>>{
+    new List<string> {
+        "Another to satiate its hunger."
+    },
+    new List<string>{
+        "Oh the humanity!"
+    },
+    new List<string>{
+        "Human is on the menu."
+    }
+    };
+
+    public List<List<string>> DemonSpeech = new List<List<string>>
+    {
+    new List<string> {
+        "You dare summon me?!",
+        "I shall feast on your soul!"
+    },
+    new List<string> {
+        "Foolish mortal!"
+    },
+    new List<string> {
+        "Interesting.."
+    }
+    };
+
+    public List<List<string>> EyeChoise = new List<List<string>>{
+        new List<string>{
+            "A worthy sacrifice."
+        },
+        new List<string>{
+            "Sight is meeningless in comparison."
+        }
+    };
+
+    public List<List<string>> BabyChoise = new List<List<string>>{
+        new List<string>{
+            "A snack for the master."
+        },
+        new List<string>{
+            "Kick the baby."
+        }
+    };
+
+    // Each comma and " " is a new comment
+    public List<List<string>> StarterSpeach = new List<List<string>>{
+    new List<string> {
+        "Rogamus vos et daemone, Da mihi postatem, et vitam diurnam!",
+        "I invoke thee...",
+        "The first thing I need to do after the summoning is appease the demon.",
+        "Only then will it be willing to heed my plea."
+    },
+};
 
 
 }

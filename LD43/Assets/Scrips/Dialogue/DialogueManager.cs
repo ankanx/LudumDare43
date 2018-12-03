@@ -6,24 +6,29 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour {
 
-    public TextMeshPro nameText;
-    public TextMeshPro dialogueText;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
 
     public Animator animator;
 
     private Queue<string> sentences;
 
-	// Use this for initialization
-	void Start () {
-
-        sentences = new Queue<string>();
-	}
-
-    public void StartDialogue(List<List<string>> listOfDialogue)
+    private void Awake()
     {
+        sentences = new Queue<string>();
+    }
+
+    public void StartDialogue(List<List<string>> listOfDialogue, string who)
+    {
+
         animator.SetTrigger("FadeIn");
-        nameText.text = gameObject.name;
+        if (who == "Player")
+        {
+            nameText.text = "Player";
+        }
         int index = Random.Range(0, listOfDialogue.Count);
+        Debug.Log(listOfDialogue.Count);
+        Debug.Log(index);
         List<string> dialogue = listOfDialogue[index];
 
         sentences.Clear();
@@ -62,7 +67,7 @@ public class DialogueManager : MonoBehaviour {
 
     IEnumerator WaitFiveSeconds()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
         DisplayNewSentence();
     }
 
@@ -72,37 +77,50 @@ public class DialogueManager : MonoBehaviour {
         animator.SetTrigger("FadeOut");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    public void Trigger(GameController.Choise choise)
     {
-
-
-        Debug.Log("objet: " + gameObject.tag + " collision with: " + collision.gameObject);
-
-        if ((collision.gameObject.tag == "Goblin") && (gameObject.tag == "Player"))
+        switch (choise)
         {
-            List<List<string>> listOfPlayerToGoblin = FindObjectOfType<DialogueList>().listOfPlayerToGoblin;
-            StartDialogue(listOfPlayerToGoblin);
-        }
-        else if ((collision.gameObject.tag == "Player") && (gameObject.tag == "Goblin"))
-        {
-            List<List<string>> listOfGoblinToPlayer = FindObjectOfType<DialogueList>().listOfGoblinToPlayer;
-            StartDialogue(listOfGoblinToPlayer);
-        }
-        else if ((collision.gameObject.tag == "Goblin") && (gameObject.tag == "Goblin"))
-        {
-            List<List<string>> listOfGoblinToGoblin = FindObjectOfType<DialogueList>().listOfGoblinToGoblin;
-            StartDialogue(listOfGoblinToGoblin);
-        }
-        else if ((collision.gameObject.tag == "Player") && (gameObject.tag == "Checkpoint"))
-        {
-            List<List<string>> listOfCheckpoint = FindObjectOfType<DialogueList>().listOfCheckpoint;
-            StartDialogue(listOfCheckpoint);
-        }
-        else if ((collision.gameObject.tag == "Player") && (gameObject.tag == "BigGoblin"))
-        {
-            List<List<string>> listOfBigGoblinToPlayer = FindObjectOfType<DialogueList>().listOfBigGoblinToPlayer;
-            StartDialogue(listOfBigGoblinToPlayer);
+            case GameController.Choise.player:
+                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                break;
+            case GameController.Choise.Sacrificesheep:
+                StartDialogue(GetComponent<DialogueList>().SheepChoise, "Player");
+                break;
+            case GameController.Choise.SlapaDragon:
+                StartDialogue(GetComponent<DialogueList>().DragonChoise, "Player");
+                break;
+            case GameController.Choise.HugaGiraffe:
+                StartDialogue(GetComponent<DialogueList>().GiraffeChoise, "Player");
+                break;
+            case GameController.Choise.Sacrificeababy:
+                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                break;
+            case GameController.Choise.Sacrificeahand:
+                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                break;
+            case GameController.Choise.Sacrificeaneye:
+                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                break;
+            case GameController.Choise.SacrificeHuman:
+                StartDialogue(GetComponent<DialogueList>().HumanChoise, "Player");
+                break;
         }
     }
+
+    public void TriggerStartSpeach(GameController.Choise choise)
+    {
+        Debug.Log("Starter Dialog");
+        switch (choise)
+        {
+            case GameController.Choise.player:
+                StartDialogue(GetComponent<DialogueList>().StarterSpeach, "Player");
+                break;
+        }
+        
+    }
+
 
 }

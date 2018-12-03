@@ -844,6 +844,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventList:
   - {fileID: 1355981873464822, guid: 7523eeb9f99858d41b762f6e99b62c60, type: 2}
+  - {fileID: 1117473543254348, guid: bf1ac9e0ee089a44ebea993f2947fce4, type: 2}
+  - {fileID: 1256463024696752, guid: 8adcffd577425f941909f2ee09ca4312, type: 2}
+  - {fileID: 1962967825382042, guid: 2f35417dab1b2ad4aa223db6c18646a8, type: 2}
+  - {fileID: 1184677221430968, guid: 5c1f632a34fcc614da98482019e4b01e, type: 2}
+  - {fileID: 1211073521117248, guid: 6a0b46369bb131a49b3eebf1172913fd, type: 2}
+  - {fileID: 1342006849268266, guid: 1585c7bdc480ced498618adabf183199, type: 2}
+  - {fileID: 1865928588771648, guid: fcfa8fc6a3fdf93429bf3e9ee10a5186, type: 2}
+  - {fileID: 1632954382172198, guid: 119f39698c6212543b1eefe25931570b, type: 2}
+  - {fileID: 1982569235542302, guid: d04d2c9a992d03841b39037297e05bdd, type: 2}
+  - {fileID: 1855454359203634, guid: 25476c5088153a445b01a63fef47f055, type: 2}
+  - {fileID: 1223396090961960, guid: ab56fa4d75322ea419fc2964012c8565, type: 2}
+  - {fileID: 1426007793233638, guid: 228898264b628ff49bf76e42fffa70ac, type: 2}
+  - {fileID: 1695873342873938, guid: 2723aa3ee74b1ae4fb8000d95a36fbd5, type: 2}
+  - {fileID: 1866479709252934, guid: afd37a653b2c28446a4354372831458c, type: 2}
+  - {fileID: 1337594669443948, guid: 647933ad2f509ed42abdb223ba96f5b3, type: 2}
+  - {fileID: 1331458318302930, guid: 37ded32d2b960414d86bce4c95a7aab8, type: 2}
+  - {fileID: 1116113645011652, guid: 616a2a47e8e7edf4baacc04ec2f35f35, type: 2}
+  - {fileID: 1246922038798756, guid: 2ed4bd59687d3a444af04db62f558626, type: 2}
+  - {fileID: 1868407642537436, guid: bb807867e9424da4c8a3f4b596f6255c, type: 2}
   CurrenPlaythruEventList: []
   Playthrough: []
   CurrentEvent: {fileID: 0}
@@ -853,6 +872,15 @@ MonoBehaviour:
   AvailebleAchivements: []
   AchivementPrefab: {fileID: 1248606217954712, guid: aeecb42dbda8e1447a1ed84f71df48f3,
     type: 2}
+  DialogMan: {fileID: 0}
+  Life: 1
+  Numofgames: 0
+  lasteventid: -1
+  Player: {fileID: 1871761360}
+  step1: {fileID: 21300000, guid: dfe9e24395d305e47a4d13410ef8ec63, type: 3}
+  step2: {fileID: 21300000, guid: c08a99dda8d6f2549a90207bc6eb835c, type: 3}
+  step3: {fileID: 21300000, guid: 79201ec9ef3bd2f4987bf4b7bc461e6e, type: 3}
+  step4: {fileID: 21300000, guid: f9067582aff46ed4f89fd6030e39f23f, type: 3}
 --- !u!4 &850819820
 Transform:
   m_ObjectHideFlags: 0

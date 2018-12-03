@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SaveHandler
   - Fire
+  - Dialog
   layers:
   - Default
   - TransparentFX
