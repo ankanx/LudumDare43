@@ -30,7 +30,7 @@ public class MoveToNextEvent : MonoBehaviour {
                 break;
         }
 
-
+        handler.GetComponent<GameController>().TriggerDialog(choise);
 
     }
 

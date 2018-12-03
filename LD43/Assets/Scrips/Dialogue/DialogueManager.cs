@@ -87,7 +87,7 @@ public class DialogueManager : MonoBehaviour {
                 StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
                 break;
             case GameController.Choise.Sacrificesheep:
-                StartDialogue(GetComponent<DialogueList>().StarterSpeach, "Sheep");
+                StartDialogue(GetComponent<DialogueList>().SheepChoise, "Sheep");
                 break;
         }
     }
