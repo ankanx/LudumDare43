@@ -28,6 +28,12 @@ public class GameController : MonoBehaviour {
     public int Numofgames = 0;
     public int lasteventid = -1;
 
+    public GameObject Player;
+    public Sprite step1;
+    public Sprite step2;
+    public Sprite step3;
+    public Sprite step4;
+
     public enum Choise
     {
         player,
@@ -73,6 +79,7 @@ public class GameController : MonoBehaviour {
 
     public void GenerateNewGame()
     {
+        Player.GetComponent<SpriteRenderer>().sprite = step1;
         lasteventid = -1;
         Numofgames++;
         Life = 1;
@@ -91,8 +98,6 @@ public class GameController : MonoBehaviour {
         {
             StartCoroutine("ShowScoreScreen", new List<string>(new string[] { "Poor choise, the demon devoured you as a punishment.. ." }));
         }
-
-
 
 
     }
@@ -128,7 +133,18 @@ public class GameController : MonoBehaviour {
 
         CalculateIfSurvived(choise);
 
-
+        if (Playthrough.Count == 3)
+        {
+            Player.GetComponent<SpriteRenderer>().sprite = step2;
+        }
+        else if (Playthrough.Count == 6)
+        {
+            Player.GetComponent<SpriteRenderer>().sprite = step3;
+        }
+        else if (Playthrough.Count == 9)
+        {
+            Player.GetComponent<SpriteRenderer>().sprite = step4;
+        }
 
 
         GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Stop();
