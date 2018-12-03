@@ -94,9 +94,12 @@ public class GameController : MonoBehaviour {
         {
             StartCoroutine("ShowScoreScreen",new List<string>(new string[]{ "Poor choise, the demon devoured you as a punishment...", "Lets Try Again..."}));
         }
-        else
+        else if(Numofgames == 3)
         {
-            StartCoroutine("ShowScoreScreen", new List<string>(new string[] { "Poor choise, the demon devoured you as a punishment.. ." }));
+            StartCoroutine("ShowScoreScreen", new List<string>(new string[] { "Come on... we dont have infinite of thease you know.. ." }));
+        }else
+        {
+            StartCoroutine("ShowScoreScreen", new List<string>(new string[] { "Another one. . ." }));
         }
 
 
@@ -204,6 +207,258 @@ public class GameController : MonoBehaviour {
 
     public void CalculateIfSurvived(Choise choise)
     {
+
+
+        switch (choise)
+        {
+            case Choise.SacrificeHuman:
+                if((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
+                {
+                    Life -= 1;
+                }
+                break;
+            case Choise.Sacrificeababy:
+                if ((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
+                {
+                    Life += 0;
+                }
+                break;
+            case Choise.Sacrificeaneye:
+                if ((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
+                {
+                    Life -= 1;
+                }
+                break;
+            case Choise.Sacrificeahand:
+                if ((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
+                {
+                    Life += 1;
+                }
+                break;
+            case Choise.SlapaDragon:
+                if ((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
+                {
+                    Life += 0;
+                }
+                break;
+            case Choise.HugaGiraffe:
+                if ((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
+                {
+                    Life -= 1;
+                }
+                break;
+            case Choise.Sacrificesheep:
+                if ((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
+                {
+                    Life += 1;
+                }
+                break;
+            case Choise.Flipatable:
+                if ((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
+                {
+                    Life += 0;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
+                {
+                    Life += 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
+                {
+                    Life -= 1;
+                }
+                if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
+                {
+                    Life += 0;
+                }
+                break;
+            default:
+                break;
+        }
+
+
+
+
+
         if((choise == Choise.SacrificeHuman && Demon.SecondTrait1 == Demon.Trait.Lust) || (choise == Choise.SacrificeHuman && Demon.MainTrait1 == Demon.Trait.Lust))
         {
             Life -= 1;
