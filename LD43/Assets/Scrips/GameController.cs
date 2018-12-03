@@ -23,8 +23,31 @@ public class GameController : MonoBehaviour {
 
     public DialogueManager DialogMan;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+
+    public enum Choise
+    {
+        player,
+        started,
+        Sacrificesheep,
+        Sacrificehumanbyburning,
+        Offergold,
+        offersownblood,
+        HugaGiraffe,
+        Asoulstone,
+        BoonofGreed,
+        BoonofWrath,
+        BoonofEnvy,
+        Flipatable,
+        Feedabeggar,
+        Sacrificeababy,
+        SlapaDragon,
+        Sacrificeaneye,
+        Sacrificeahand,
+        SacrificeHuman
+    };
+
+    void Start () {
 
         AvailebleAchivements = new List<Achivement>();
         for (int i = 0; i < AchivementData.name.Count; i++)
@@ -53,7 +76,7 @@ public class GameController : MonoBehaviour {
 
         StartCoroutine("ShowScoreScreen");
 
-        GenerateEvent(); 
+        GenerateEvent(Choise.started); 
 
     }
 
@@ -73,14 +96,14 @@ public class GameController : MonoBehaviour {
         Debug.Log("Die " + Playthrough.Count);
         if(Playthrough.Count == 1)
         {
-            Debug.Log("Die2");
 
             UnlockAchivement(AvailebleAchivements[0]);
         }
     }
 
-    public void GenerateEvent()
+    public void GenerateEvent(Choise choise)
     {
+        Debug.Log(choise);
         GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Stop();
         if (Playthrough.Count > SaveLoad.CurrentSave.progress)
         {
@@ -98,12 +121,17 @@ public class GameController : MonoBehaviour {
         DialogMan = NewEvent.GetComponentInChildren<DialogueManager>();
         if (Playthrough.Count == 1)
         {
-            DialogMan.TriggerStartSpeach("Player");
+            DialogMan.TriggerStartSpeach(Choise.player);
         }else
         {
-            DialogMan.Trigger("Player");
+            DialogMan.Trigger(Choise.player);
         }
         
+    }
+
+    public void TriggerDialog(Choise choise)
+    {
+        DialogMan.Trigger(choise);
     }
 
     public void UnlockAchivement(Achivement achivement)

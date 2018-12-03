@@ -79,16 +79,29 @@ public class DialogueManager : MonoBehaviour {
 
 
 
-    public void Trigger(string who)
+    public void Trigger(GameController.Choise choise)
     {
-        Debug.Log("Random Dialog");
-        StartDialogue(GetComponent<DialogueList>().PlayerSpeach,who);
+        switch (choise)
+        {
+            case GameController.Choise.player:
+                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                break;
+            case GameController.Choise.Sacrificesheep:
+                StartDialogue(GetComponent<DialogueList>().StarterSpeach, "Sheep");
+                break;
+        }
     }
 
-    public void TriggerStartSpeach(string who)
+    public void TriggerStartSpeach(GameController.Choise choise)
     {
         Debug.Log("Starter Dialog");
-        StartDialogue(GetComponent<DialogueList>().StarterSpeach,who);
+        switch (choise)
+        {
+            case GameController.Choise.player:
+                StartDialogue(GetComponent<DialogueList>().StarterSpeach, "Player");
+                break;
+        }
+        
     }
 
 

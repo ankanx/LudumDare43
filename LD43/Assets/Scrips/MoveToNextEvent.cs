@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveToNextEvent : MonoBehaviour {
 
     public GameObject handler;
+    public string type;
 
     private void Start()
     {
@@ -16,8 +17,36 @@ public class MoveToNextEvent : MonoBehaviour {
         GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Stop();
     }
 
+    public void TriggerDialog()
+    {
+        GameController.Choise choise = GameController.Choise.started;
+        switch (type)
+        {
+            case "sheep":
+                choise = GameController.Choise.Sacrificesheep;
+                break;
+            case "human":
+                choise = GameController.Choise.SacrificeHuman;
+                break;
+        }
+
+
+
+    }
+
     public void MoveToNextEventTrigger()
     {
-        handler.GetComponent<GameController>().GenerateEvent();
+        GameController.Choise choise = GameController.Choise.started;
+        switch (type)
+        {
+            case "sheep":
+                choise = GameController.Choise.Sacrificesheep;
+                break;
+            case "human":
+                choise = GameController.Choise.SacrificeHuman;
+                break;
+        }
+
+        handler.GetComponent<GameController>().GenerateEvent(choise);
     }
 }
