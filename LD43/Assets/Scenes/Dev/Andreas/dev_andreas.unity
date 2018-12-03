@@ -877,10 +877,10 @@ MonoBehaviour:
   Numofgames: 0
   lasteventid: -1
   Player: {fileID: 1871761360}
-  step1: {fileID: 21300000, guid: f117555afacdb4a40a4ba1248b027529, type: 3}
-  step2: {fileID: 21300000, guid: dfe9e24395d305e47a4d13410ef8ec63, type: 3}
-  step3: {fileID: 21300000, guid: fc489400f27f87c478a5a612d357b7f0, type: 3}
-  step4: {fileID: 21300000, guid: 77ac4336ce473ad4cb3ac97c91912132, type: 3}
+  step1: {fileID: 21300000, guid: dfe9e24395d305e47a4d13410ef8ec63, type: 3}
+  step2: {fileID: 21300000, guid: c08a99dda8d6f2549a90207bc6eb835c, type: 3}
+  step3: {fileID: 21300000, guid: 79201ec9ef3bd2f4987bf4b7bc461e6e, type: 3}
+  step4: {fileID: 21300000, guid: f9067582aff46ed4f89fd6030e39f23f, type: 3}
 --- !u!4 &850819820
 Transform:
   m_ObjectHideFlags: 0
