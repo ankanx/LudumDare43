@@ -104,6 +104,9 @@ public class DialogueManager : MonoBehaviour {
             case GameController.Choise.Sacrificeaneye:
                 StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
                 break;
+            case GameController.Choise.SacrificeHuman:
+                StartDialogue(GetComponent<DialogueList>().HumanChoise, "Player");
+                break;
         }
     }
 

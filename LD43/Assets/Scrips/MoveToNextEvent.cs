@@ -28,6 +28,24 @@ public class MoveToNextEvent : MonoBehaviour {
             case "human":
                 choise = GameController.Choise.SacrificeHuman;
                 break;
+            case "dragon":
+                choise = GameController.Choise.SlapaDragon;
+                break;
+            case "flip":
+                choise = GameController.Choise.SlapaDragon;
+                break;
+            case "eye":
+                choise = GameController.Choise.SlapaDragon;
+                break;
+            case "giraffe":
+                choise = GameController.Choise.SlapaDragon;
+                break;
+            case "baby":
+                choise = GameController.Choise.SlapaDragon;
+                break;
+            case "hand":
+                choise = GameController.Choise.SlapaDragon;
+                break;
         }
 
         handler.GetComponent<GameController>().TriggerDialog(choise);
