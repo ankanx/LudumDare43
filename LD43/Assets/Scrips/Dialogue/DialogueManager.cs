@@ -13,18 +13,17 @@ public class DialogueManager : MonoBehaviour {
 
     private Queue<string> sentences;
 
-	// Use this for initialization
-	void Start () {
-
+    private void Awake()
+    {
         sentences = new Queue<string>();
-	}
+    }
 
     public void StartDialogue(List<List<string>> listOfDialogue)
     {
-        sentences = new Queue<string>();
+
         animator.SetTrigger("FadeIn");
         nameText.text = gameObject.name;
-        int index = Random.Range(0, listOfDialogue.Count-1);
+        int index = Random.Range(0, listOfDialogue.Count);
         Debug.Log(listOfDialogue.Count);
         Debug.Log(index);
         List<string> dialogue = listOfDialogue[index];
