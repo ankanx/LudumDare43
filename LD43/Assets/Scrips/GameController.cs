@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour {
 
@@ -23,6 +24,8 @@ public class GameController : MonoBehaviour {
 
     public DialogueManager DialogMan;
 
+    public int Life = 1;
+    public int Numofgames = 0;
     // Use this for initialization
 
     public enum Choise
@@ -70,25 +73,40 @@ public class GameController : MonoBehaviour {
 
     public void GenerateNewGame()
     {
+        Numofgames++;
+        Life = 1;
         Playthrough = new List<GameObject>();
         CurrenPlaythruEventList = new List<GameObject>(EventList);
         Demon = DemonGeneration.GenerateDemon();
 
-        StartCoroutine("ShowScoreScreen");
+        if(Numofgames == 1)
+        {
+            StartCoroutine("ShowScoreScreen", new List<string>(new string[] { "Generating New Worshipper... .. ." }));
+        }else if(Numofgames == 2)
+        {
+            StartCoroutine("ShowScoreScreen",new List<string>(new string[]{ "Poor choise, the demon devoured you as a punishment...", "Lets Try Again..."}));
+        }
+        else
+        {
+            StartCoroutine("ShowScoreScreen", new List<string>(new string[] { "Poor choise, the demon devoured you as a punishment.. ." }));
+        }
 
-        GenerateEvent(Choise.started); 
+
+
 
     }
 
-    IEnumerator ShowScoreScreen()
+    IEnumerator ShowScoreScreen(List<string> text)
     {
-        GameObject NewEvent = (GameObject)Instantiate(ScoreScreen);
-        yield return new WaitForSeconds(1);
-        //loadinganim.SetTrigger("Finished");
-        //loadingText.text = "";
-        yield return new WaitForSeconds(1);
-        Destroy(NewEvent);
 
+        GameObject NewEvent = (GameObject)Instantiate(ScoreScreen);
+        foreach(string str in text)
+        {
+            NewEvent.GetComponentInChildren<TextMeshProUGUI>().text = str;
+            yield return new WaitForSeconds(2.5f);
+        }
+        Destroy(NewEvent);
+        GenerateEvent(Choise.started);
     }
 
     public void Die()
@@ -99,11 +117,19 @@ public class GameController : MonoBehaviour {
 
             UnlockAchivement(AvailebleAchivements[0]);
         }
+
+        GenerateNewGame();
     }
 
     public void GenerateEvent(Choise choise)
     {
         Debug.Log(choise);
+
+        CalculateIfSurvived(choise);
+
+
+
+
         GameObject.FindGameObjectWithTag("Fire").GetComponent<ParticleSystem>().Stop();
         if (Playthrough.Count > SaveLoad.CurrentSave.progress)
         {
@@ -152,6 +178,18 @@ public class GameController : MonoBehaviour {
         SaveLoad.Save();
     }
 
+    public void CalculateIfSurvived(Choise choise)
+    {
+        if((choise == Choise.SacrificeHuman && Demon.SecondTrait1 == Demon.Trait.Lust) || (choise == Choise.SacrificeHuman && Demon.MainTrait1 == Demon.Trait.Lust))
+        {
+            Life -= 1;
+        }
 
+
+        if(Life <= 0)
+        {
+            Die();
+        }
+    }
 
 }

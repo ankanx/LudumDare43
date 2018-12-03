@@ -67,7 +67,7 @@ public class DialogueManager : MonoBehaviour {
 
     IEnumerator WaitFiveSeconds()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
         DisplayNewSentence();
     }
 
@@ -87,7 +87,22 @@ public class DialogueManager : MonoBehaviour {
                 StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
                 break;
             case GameController.Choise.Sacrificesheep:
-                StartDialogue(GetComponent<DialogueList>().SheepChoise, "Sheep");
+                StartDialogue(GetComponent<DialogueList>().SheepChoise, "Player");
+                break;
+            case GameController.Choise.SlapaDragon:
+                StartDialogue(GetComponent<DialogueList>().DragonChoise, "Player");
+                break;
+            case GameController.Choise.HugaGiraffe:
+                StartDialogue(GetComponent<DialogueList>().GiraffeChoise, "Player");
+                break;
+            case GameController.Choise.Sacrificeababy:
+                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                break;
+            case GameController.Choise.Sacrificeahand:
+                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
+                break;
+            case GameController.Choise.Sacrificeaneye:
+                StartDialogue(GetComponent<DialogueList>().PlayerSpeach, "Player");
                 break;
         }
     }

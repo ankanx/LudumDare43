@@ -854,6 +854,7 @@ MonoBehaviour:
   AchivementPrefab: {fileID: 1248606217954712, guid: aeecb42dbda8e1447a1ed84f71df48f3,
     type: 2}
   DialogMan: {fileID: 0}
+  Life: 1
 --- !u!4 &850819820
 Transform:
   m_ObjectHideFlags: 0
