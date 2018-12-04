@@ -219,7 +219,6 @@ public class GameController : MonoBehaviour {
                 if((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
                 {
@@ -232,7 +231,6 @@ public class GameController : MonoBehaviour {
                 if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
                 {
@@ -267,11 +265,10 @@ public class GameController : MonoBehaviour {
                 if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
                 {
-                    Life += 0;
+                    Life -= 1;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
                 {
@@ -281,12 +278,11 @@ public class GameController : MonoBehaviour {
             case Choise.Sacrificeaneye:
                 if ((Demon.SecondTrait1 == Demon.Trait.Lust) || (Demon.MainTrait1 == Demon.Trait.Lust))
                 {
-                    Life += 0;
+                    Life -= 1;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
                 {
@@ -321,7 +317,6 @@ public class GameController : MonoBehaviour {
                 if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
                 {
@@ -334,12 +329,10 @@ public class GameController : MonoBehaviour {
                 if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
                 {
                     Life += 1;
-                    break;
                 }
                 break;
             case Choise.SlapaDragon:
@@ -350,7 +343,6 @@ public class GameController : MonoBehaviour {
                 if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
                 {
@@ -381,7 +373,7 @@ public class GameController : MonoBehaviour {
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Pride) || (Demon.MainTrait1 == Demon.Trait.Pride))
                 {
-                    Life += 0;
+                    Life -= 1;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
                 {
@@ -389,16 +381,15 @@ public class GameController : MonoBehaviour {
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
                 {
-                    Life += 0;
+                    Life -= 1;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
                 {
-                    Life += 0;
+                    Life -= 1;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Greed) || (Demon.MainTrait1 == Demon.Trait.Greed))
                 {
@@ -425,7 +416,6 @@ public class GameController : MonoBehaviour {
                 if ((Demon.SecondTrait1 == Demon.Trait.Gluttony) || (Demon.MainTrait1 == Demon.Trait.Gluttony))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Sloth) || (Demon.MainTrait1 == Demon.Trait.Sloth))
                 {
@@ -448,7 +438,6 @@ public class GameController : MonoBehaviour {
                 if ((Demon.SecondTrait1 == Demon.Trait.Envy) || (Demon.MainTrait1 == Demon.Trait.Envy))
                 {
                     Life += 1;
-                    break;
                 }
                 if ((Demon.SecondTrait1 == Demon.Trait.Wrath) || (Demon.MainTrait1 == Demon.Trait.Wrath))
                 {
@@ -471,7 +460,7 @@ public class GameController : MonoBehaviour {
                 break;
         }
 
-        Debug.Log(Life);
+        Debug.Log("life: " +Life);
 
         if (Life <= 0)
         {

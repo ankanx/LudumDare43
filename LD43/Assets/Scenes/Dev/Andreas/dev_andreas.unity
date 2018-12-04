@@ -245,7 +245,6 @@ GameObject:
   m_Component:
   - component: {fileID: 45346527}
   - component: {fileID: 45346526}
-  - component: {fileID: 45346525}
   - component: {fileID: 45346528}
   m_Layer: 9
   m_Name: Player
@@ -254,13 +253,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &45346525
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 45346524}
-  m_Enabled: 1
 --- !u!20 &45346526
 Camera:
   m_ObjectHideFlags: 0
