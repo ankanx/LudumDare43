@@ -22,10 +22,7 @@ public class DialogueManager : MonoBehaviour {
     {
 
         animator.SetTrigger("FadeIn");
-        if (who == "Player")
-        {
-            nameText.text = "Player";
-        }
+        nameText.text = who;
         int index = Random.Range(0, listOfDialogue.Count);
         List<string> dialogue = listOfDialogue[index];
 
