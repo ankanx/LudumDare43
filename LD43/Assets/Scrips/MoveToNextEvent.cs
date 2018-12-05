@@ -35,7 +35,7 @@ public class MoveToNextEvent : MonoBehaviour {
                 choise = GameController.Choise.Flipatable;
                 break;
             case "eye":
-                choise = GameController.Choise.SlapaDragon;
+                choise = GameController.Choise.Sacrificeaneye;
                 break;
             case "giraffe":
                 choise = GameController.Choise.HugaGiraffe;
